@@ -1,0 +1,11 @@
+<h3 class="comments"><a name="comments">Comments</a></h3>
+
+<%= render @comments %>
+
+<%- if flash[:comment_notice] %>
+  <p class="flash notice">
+    <a name="comment-flash"><%= flash[:comment_notice] %></a>
+  </p>
+<%- end %>
+
+<%= render(partial: 'blog/comments/form', locals: {comment: @comment}) %>

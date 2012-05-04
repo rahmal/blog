@@ -1,0 +1,8 @@
+<%- content_for :title do %>
+  <%= @post.title %>
+  <%= t('blog.blog.title') %>
+<%- end %>
+
+<%= blog_page do %>
+  <%= render @post %>
+<% end %>

@@ -1,0 +1,23 @@
+<div class="blog_post">
+  <h1>
+    <%= link_to_unless_current(post.title, permalink_path(post))  %>
+    <%= render(partial: 'blog/posts/tools', locals: {post: post })  %>
+  </h1>
+
+  <p class="byline">
+    Posted
+    <%= distance_of_time_in_words_to_now(post.published_at) %>
+    ago by
+    <%= post.author_byline %>
+  </p>
+
+  <div class="blog_body">
+    <%= markdown(post.body, :trusted? => true) %>
+  </div>
+
+  <%- if current_page?(permalink_path(post)) %>
+    <%= render(partial: 'blog/posts/comments_section', locals: {post: post, comments: @comments, comment: @comment}) %>
+  <%- else %>
+    <p class="links"><%= link_to_comments_section(post) %></p>
+  <%- end %>
+</div>

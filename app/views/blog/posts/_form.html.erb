@@ -1,0 +1,7 @@
+<%= simple_form_for(post, input_html: { :class => "blog_post" }) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :permalink %>
+  <%= f.input :body %>
+  <%= f.input :published_at %>
+  <%= f.button :submit, :class => "update_post btn primary" %>
+<% end %>

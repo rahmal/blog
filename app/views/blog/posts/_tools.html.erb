@@ -1,0 +1,3 @@
+<%- if can?(:update, Blog::Post) %>
+  <%= link_to "Edit", edit_post_path(post), :class => "edit_post btn secondary" %>
+<% end %>

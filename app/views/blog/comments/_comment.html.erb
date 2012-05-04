@@ -1,0 +1,12 @@
+<div class="blog_comment show <%= comment_classes(comment) %>">
+  <%= render(partial: 'blog/comments/tools', locals: {comment: comment}) %>
+  <h4 class="byline">
+    <a name="comment-<%= comment.id %>"><%= comment_author_html(comment) %></a>
+    said
+    <a class="comment-link" href="#comment-<%= comment.id %>"><%= distance_of_time_in_words_to_now(comment.created_at) %></a>
+    ago:
+  </h4>
+  <div class="blog_body">
+    <%= markdown(comment.body, trusted?: comment.author_can_post?) %>
+  </div>
+</div>

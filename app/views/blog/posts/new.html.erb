@@ -1,0 +1,8 @@
+<%- content_for :title do %>
+  New Post
+<%- end %>
+
+<%= blog_page do %>
+  <h1>New Post</h1>
+  <%= render partial: 'form', locals: {post: @post} %>
+<% end %>

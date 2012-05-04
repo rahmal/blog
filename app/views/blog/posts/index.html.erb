@@ -1,0 +1,20 @@
+<%- content_for :title do %>
+  <%= t('blog.blog.title') %>
+<%- end %>
+
+<%- content_for :head do %>
+  <%- if params[:page] %>
+    <%- content_for :head do %>
+      <%# Don't index pages after the first, but still follow links. %>
+      <meta name="robots" content="noindex, follow">
+    <%- end %>
+  <%- end %>
+<%- end %>
+
+<%= blog_page do %>
+  <div class="blog_posts">
+    <%= link_to('New Post', new_post_path, class: 'new_post btn large primary') if can?(:create, Blog::Post) %>
+    <%= render @posts %>
+    <%= paginate @posts %>
+  </div>
+<% end %>

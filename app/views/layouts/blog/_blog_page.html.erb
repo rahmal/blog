@@ -1,0 +1,17 @@
+<% content_for :head do %>
+  <%= auto_discovery_link_tag :atom, feed_url %>
+<% end %>
+
+<div class="blog">
+  <div class="blog_content">
+    <div class="blog_column">
+     <%= content_for(:blog_content) %>
+    </div>
+    <div class="blog_sidebar">
+      <div class="blog_body blog_column">
+        <%= render 'layouts/blog/sidebar' %>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>
