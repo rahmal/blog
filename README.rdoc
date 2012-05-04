@@ -3,7 +3,7 @@
 Blog is a Rails Engine that adds a simple blogging engine onto an existing Rails App.
 It is for anyone who has an existing Rails app that they use for their primary website or
 web application and would like to add a blog without deploying a separate blogging application,
-or building one from scratch. I built MiniBlog to add a blog to my own personal site, which I
+or building one from scratch. I built Blog to add a blog to my own personal site, which I
 had already built.  It is perfect for personal blogging, if you don't need a full-featured
 blogging or cms application.
 
@@ -12,17 +12,17 @@ blogging or cms application.
  First, add the
 following line to your `Gemfile`:
 
-    gem 'mini_blog'
+    gem 'blog'
 
 ...and run:
 
     bundle install
-    rails generate mini_blog:install
+    rails generate blog:install
     rake db:migrate
 
 == Requirements
 
-* Ruby 1.9+
+* Ruby 1.9.2+
 * Rails 3.1+
 
 == Bugs and Feature Requests
