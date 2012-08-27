@@ -18,14 +18,13 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.test_files   = Dir["spec/**/*"]
 
-  s.add_dependency 'rails',         '~> 3.2.2'
-# s.add_dependency 'rails',         '~> 3.1.0'
-  s.add_dependency 'jquery-rails',  '~> 1.0'
-  s.add_dependency 'sass-rails',    '~> 3.1'
-  s.add_dependency 'coffee-script', '~> 2.2'
-  s.add_dependency 'kaminari',      '~> 0.12.4'
-  s.add_dependency 'cancan',        '~> 1.6'
-  s.add_dependency 'simple_form',   '~> 1.4'
+  s.add_dependency 'rails',         '3.2.6'
+  s.add_dependency 'jquery-rails' #, '~> 1.0'
+  s.add_dependency 'sass-rails',    '~> 3.2.3'
+  s.add_dependency 'coffee-rails',  '~> 3.2.1'
+  s.add_dependency 'kaminari'     #, '~> 0.12.4'
+  s.add_dependency 'cancan'       #, '~> 1.6'
+  s.add_dependency 'simple_form'  #, '~> 1.4'
   s.add_dependency 'state_machine', '~> 1.0.0'
   s.add_dependency 'rdiscount',     '~> 1.6'
   s.add_dependency 'sanitize',      '~> 2.0'
@@ -38,7 +37,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'shoulda-matchers'
   s.add_development_dependency 'generator_spec'
   s.add_development_dependency 'fakeweb'
-  s.add_development_dependency 'vcr',             '>= 2.0.0.beta2'
+  s.add_development_dependency 'vcr'   #,             '>= 2.0.0.beta2'
 # s.add_development_dependency 'capybara-webkit', '~> 0.6.1'
 # s.add_development_dependency 'machinist' (see Gemfile)
 # s.add_development_dependency 'pygments' (see Gemfile)

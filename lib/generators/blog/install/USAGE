@@ -1,11 +1,11 @@
 Description:
-    Install rails_blog_engine
+    Install blog
 
 Example:
-    rails generate rails_blog_engine:install
+    rails generate blog:install
 
     This will create:
-        config/initializers/rails_blog_engine.rb
-        config/locales/rails_blog_engine.*.yml
+        config/initializers/blog.rb
+        config/locales/blog.*.yml
         config/routes.rb (A new route for "/blog")
         db/migrate/*.rb

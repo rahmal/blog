@@ -3,7 +3,7 @@ module Blog
     # Wrap a block of content up as a blog page.  This is basically a
     # nested layout with some wrapper classes and a sidebar.
     def blog_page(&block)
-      content_for(:rails_blog_engine_content, &block)
+      content_for(:blog_content, &block)
       render :partial => 'layouts/blog/blog_page'
     end
 

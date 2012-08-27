@@ -21,7 +21,7 @@ class Blog::InstallGenerator < Rails::Generators::Base
   end
 
   def copy_sidebar
-    copy_matching_files_from_gem('app/views/layouts/blog/_sidebar.html.haml')
+    copy_matching_files_from_gem('app/views/layouts/blog/_sidebar.html.erb')
   end
 
   def copy_stylesheets
@@ -32,17 +32,26 @@ class Blog::InstallGenerator < Rails::Generators::Base
 
   def register_javascripts
     in_root do
-      append_file("app/assets/javascripts/application.js",
-                  "//= require blog\n",
-                  :before => /^\/\/= require/)
+      begin
+        #if File.exists?('app/assets/javascripts/application.js')
+        append_file("app/assets/javascripts/application.js", "//= require blog\n", :before => /^\/\/= require_self/)
+      rescue
+        puts 'Could not find file: "#{Rails.root}/app/assets/javascripts/application.js"'
+        puts 'Checking for: "#{Rails.root}/app/assets/javascripts/application.js.coffee"'
+        append_file("app/assets/javascripts/application.js.coffee", "#= require blog\n", :before => /^#= require_self/)
+      end
     end
   end
 
   def register_stylesheets
     in_root do
-      inject_into_file("app/assets/stylesheets/application.css",
-                       " *= require blog\n",
-                       :before => /^\*\//)
+      begin
+        inject_into_file("app/assets/stylesheets/application.css", " *= require blog\n", :before => /^\ *= require/)
+      rescue
+        puts 'Could not find file: "#{Rails.root}/app/assets/stylesheets/application.css"'
+        puts 'Checking for: "#{Rails.root}/app/assets/stylesheets/application.css.scss"'
+        inject_into_file("app/assets/stylesheets/application.css.scss", " *= require blog\n", :before => /^\ *= require/)
+      end
     end
   end
 

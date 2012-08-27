@@ -1,0 +1,37 @@
+@import "blog/config";
+
+// Place all the styles for posts and lists of posts here.  We assume a
+// light background color.
+.blog {
+
+  // Formatting for lists of posts.
+  .blog_posts {
+    .new_post.btn, nav {
+      margin-bottom: $blank_line_height*2;
+    }
+  }
+
+  // Formatting for individual posts, either standalone or in a list.
+  .blog_post {
+    color: black;
+    margin-bottom: $blank_line_height*2;
+
+    >h1 {
+      margin-bottom: 0;
+      .btn {
+        vertical-align: text-bottom;
+      }
+    }
+
+    >p.byline {
+      color: grey;
+    }
+
+    // We use this for moderation warnings.
+    >.flash.notice {
+      border: 1px solid #049cdb;
+      background: #c7eefe;
+      padding: $box_padding;
+    }
+  }
+}

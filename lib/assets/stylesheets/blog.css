@@ -1,0 +1,12 @@
+/*
+ * Include the CSS files required by blog.
+ *
+ *= require blog/ui/bootstrap_extracts
+ *= require blog/ui/simple_form
+ *= require blog/filters/code
+ *
+ *= require blog/layout
+ *= require blog/posts
+ *= require blog/comments
+ *= require blog/customizations
+*/

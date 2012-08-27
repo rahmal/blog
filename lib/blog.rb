@@ -3,7 +3,6 @@
 require "state_machine"
 require "cancan"
 require "jquery-rails"
-require "haml"
 require "rdiscount"
 require "sanitize"
 require "simple_form"

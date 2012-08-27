@@ -1,0 +1,14 @@
+en:
+  blog:
+    title: "Blog"
+  activerecord:
+    attributes:
+      blog/comment:    
+        name:  "Your name"
+        email: "Your email"
+        url:   "Your website"
+        body:  "Comment"
+  helpers:
+    submit:
+      comment:
+        create: "Post Comment"
