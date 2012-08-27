@@ -10,7 +10,7 @@ class Comments < ActiveRecord::Migration
       t.boolean :can_post
       t.string :referrer
       t.string :state
-      t.text :body:
+      t.text :body
       t.timestamps
     end
     add_index :comments, :post_id
