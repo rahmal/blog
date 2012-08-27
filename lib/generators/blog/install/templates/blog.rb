@@ -1,5 +1,9 @@
 # Configure Blog here.
 
+# The name of the website or blog. Usually used in the title
+# or headings on the blog.
+Rails.application.config.blog.name = "Blog"
+
 # Retrieve the current user.  This is currently used together with
 # blog_admin_method to determine whether the user is an administrator.
 #

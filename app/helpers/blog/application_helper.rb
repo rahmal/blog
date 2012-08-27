@@ -1,5 +1,12 @@
 module Blog
   module ApplicationHelper
+
+    def self.included(base) 
+      base.include ::ApplicationHelper if defined?(::ApplicationHelper)
+      base.include ::LayoutHelper if defined?(::LayoutHelper)
+    end
+ 
+
     # Wrap a block of content up as a blog page.  This is basically a
     # nested layout with some wrapper classes and a sidebar.
     def blog_page(&block)
