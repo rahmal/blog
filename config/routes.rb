@@ -1,4 +1,4 @@
-RailsBlogEngine::Engine.routes.draw do
+Blog::Engine.routes.draw do
   # Atom feed.
   get 'posts.:format' => 'posts#index', :constraints => { :format => 'atom' }
 
