@@ -5,7 +5,7 @@ module Blog
 
     belongs_to :post, :class_name => 'Blog::Post'
 
-    validates :author_byline, :presence => true
+    validates :name, :presence => true
     validates :body, :presence => true
 
     # Comments that are visible to the public.
@@ -13,13 +13,13 @@ module Blog
           where(:state => ['unfiltered', 'filtered_as_ham', 'marked_as_ham']))
 
     # These fields are directly settable by the user.
-    attr_accessible :author_byline, :author_email, :author_url, :body
+    attr_accessible :name, :email, :url, :body
 
     # Tell rakismet where to find the fields it needs for the spam filter.
     # We don't need to specify fields which already have the right name.
     #
     # TODO: Include article permalink.
-    rakismet_attrs(:author => :author_byline, :content => :body,
+    rakismet_attrs(:author => :name, :content => :body,
                    :user_ip => :author_ip, :user_agent => :author_user_agent)
 
     # A state machine which keeps track of our spam filter status.

@@ -29,10 +29,10 @@ module Blog
 
     # Generate HTML describing the author of a comment.
     def comment_author_html(comment)
-      if comment.author_url && !comment.author_url.blank?
-        link_to comment.author_byline, comment.author_url, :rel => "nofollow"
+      if comment.url && !comment.url.blank?
+        link_to comment.name, comment.url, :rel => "nofollow"
       else
-        comment.author_byline
+        comment.name
       end
     end
 
@@ -56,6 +56,10 @@ module Blog
       else
         super(name, *args, &block)
       end
+    end
+
+    def title
+      @post ? "Blog :: #{@post.title}" : "Blog"
     end
 
     protected

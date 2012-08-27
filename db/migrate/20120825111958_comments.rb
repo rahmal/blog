@@ -1,6 +1,6 @@
 class Comments < ActiveRecord::Migration
   def change
-    create_table :comments do |t|
+    create_table :blog_comments do |t|
       t.belongs_to :post
       t.string :name
       t.string :email

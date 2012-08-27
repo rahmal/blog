@@ -9,7 +9,6 @@ module Blog
               :inclusion => { :in => %w(unpublished published) })
     validates :permalink, :presence => true, :uniqueness => true
     validates :author, :presence => true
-    validates :author_byline, :presence => true
     validates :published_at, :presence => true, :if => :published?
 
     attr_accessible :title, :body, :permalink, :author
